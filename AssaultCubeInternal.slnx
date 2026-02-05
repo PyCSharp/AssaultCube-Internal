@@ -1,0 +1,8 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Win32" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="AssaultCubeInternal/AssaultCubeInternal.vcxproj" Id="6693ed1f-2c96-4598-bb40-4e7eb1df18e2" />
+</Solution>
