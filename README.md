@@ -37,6 +37,7 @@ https://github.com/adafcaefc/Universal-OpenGL-2-Kiero-Hook
 1. Start `ac_client.exe`
 2. Inject the compiled DLL into the game process
 3. Open the menu in-game and toggle features
+4. You can hide/show the menu by pressing Insert
 
 Recommended injector:  
 https://github.com/DarthTon/Xenos
