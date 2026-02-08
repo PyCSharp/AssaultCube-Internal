@@ -15,7 +15,7 @@ DWORD WINAPI infiniteArmor(LPVOID base) {
 
 		if (currentState) // write when the cheat is activated
 			*reinterpret_cast<uint32_t*>(armor) = 9999; // write value
-
+		
 		if (lastState && !currentState) // reset when the cheat is not activated
 			*reinterpret_cast<uint32_t*>(armor) = 100;
 
@@ -59,9 +59,7 @@ DWORD WINAPI knifeSpam(LPVOID base) {
 	while (true) {
 		if (knifeSpamActivated) // write when the cheat is actiavted
 			*reinterpret_cast<uint16_t*>(knifeDelay) = 0x0000;
-
-		else {}
-
+		
 		Sleep(5);
 	}
 }
@@ -115,8 +113,6 @@ DWORD WINAPI rapidFire(LPVOID base) {
 		if (rapidFireActivated) // write when the cheat is activated
 			*reinterpret_cast<uint8_t*>(attackDelay) = 25;
 
-		else {}
-
 		Sleep(5);
 	}
 }
@@ -128,9 +124,7 @@ DWORD WINAPI infiniteJump(LPVOID base) {
 	while (true) {
 		if (infiniteJumpActivated) // write when the cheat is activated
 			*reinterpret_cast<uint8_t*>(onfloorBool) = 0x01;
-
-		else {}
-
+		
 		Sleep(20);
 	}
 }
@@ -151,7 +145,7 @@ DWORD WINAPI noRecoil(LPVOID base) {
 		bool currentState = noRecoilActivated;
 		if (currentState && !lastState) // write when the cheat is activated
 			memset((void*)changeViewAngleAddr, 0x90, 5); // apply patch
-
+		 
 		if (!currentState && lastState) { //reset when the cheat is not activated
 			memcpy((void*)changeViewAngleAddr, (const void*)originalBytes, 5); // apply patch
 			FlushInstructionCache(GetCurrentProcess(), (LPCVOID)changeViewAngleAddr, 5); //flush instruction cache
@@ -162,4 +156,17 @@ DWORD WINAPI noRecoil(LPVOID base) {
 		Sleep(5);
 	}
 	VirtualProtect((LPVOID)changeViewAngleAddr, 5, oldProtect, nullptr); // reset pageprotection
+}
+
+DWORD WINAPI grenadeSpam(LPVOID base) {
+	uintptr_t localPlayer = *reinterpret_cast<uintptr_t*>((uintptr_t)base + 0x0017E0A8); // dereference a pointer that points to the playerent class
+	uintptr_t grenadeDelay = localPlayer + 0x168; // offset in the playerent class
+
+	while (true) {
+		if (grenadeSpamActivated) {
+			*reinterpret_cast<uint16_t*>(grenadeDelay) = 0x0000; // write value
+		}
+
+		Sleep(5);
+	}
 }
