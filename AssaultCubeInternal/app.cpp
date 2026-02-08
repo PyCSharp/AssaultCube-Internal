@@ -51,6 +51,7 @@ namespace app
                 ImGui::Checkbox("Infinite Grenades", &infiniteGrenadesActivated);
                 ImGui::Checkbox("Infinite Jump", &infiniteJumpActivated);
                 ImGui::Checkbox("Knife Spam", &knifeSpamActivated);
+                ImGui::Checkbox("Grenade Spam", &grenadeSpamActivated);
                 ImGui::Checkbox("No Recoil", &noRecoilActivated);
                 ImGui::Checkbox("Rapid Fire", &rapidFireActivated);
             }
@@ -66,6 +67,6 @@ namespace app
         MH_CreateHookApi(L"user32.dll", "ClipCursor", &hkClipCursor, reinterpret_cast<LPVOID*>(&oClipCursor));
         MH_EnableHook(MH_ALL_HOOKS);
 
-        if (!ImGuiHook::Load(renderImGui, initializeImGui)) {}
+        if (!ImGuiHook::Load(renderImGui, initializeImGui)) { }
     }
 }
