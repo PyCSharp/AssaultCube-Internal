@@ -21,6 +21,7 @@ DWORD WINAPI MainThread(LPVOID lpThreadParameter)
     CreateThread(nullptr, 0, infiniteGrenades, (LPVOID)ModBase, 0, nullptr);
     CreateThread(nullptr, 0, infiniteArmor, (LPVOID)ModBase, 0, nullptr);
     CreateThread(nullptr, 0, infiniteJump, (LPVOID)ModBase, 0, nullptr);
+    CreateThread(nullptr, 0, grenadeSpam, (LPVOID)ModBase, 0, nullptr);
 
     app::initializeHook();
     return S_OK;
