@@ -10,3 +10,4 @@ DWORD WINAPI knifeSpam(LPVOID base);
 DWORD WINAPI infiniteGrenades(LPVOID base);
 DWORD WINAPI infiniteArmor(LPVOID base);
 DWORD WINAPI infiniteJump(LPVOID base);
+DWORD WINAPI grenadeSpam(LPVOID base);
