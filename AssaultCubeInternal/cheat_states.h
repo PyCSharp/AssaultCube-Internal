@@ -8,3 +8,4 @@ extern bool infiniteJumpActivated;
 extern bool knifeSpamActivated;
 extern bool noRecoilActivated;
 extern bool rapidFireActivated;
+extern bool grenadeSpamActivated;
