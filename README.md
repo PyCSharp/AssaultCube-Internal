@@ -12,6 +12,7 @@ Built mainly to learn internal DLL injection, memory editing, and basic game hac
 - Infinite jump  
 - Infinite armor  
 - Knife spam
+- Grenade Spam
 - Hooking ClipCursor() from the WinAPI
 
 Focus of this project is understanding:
